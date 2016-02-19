@@ -1,0 +1,32 @@
+{
+  "name": "visualize_today",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karbonbased/visualize_today.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karbonbased/visualize_today/issues"
+  },
+  "homepage": "https://github.com/karbonbased/visualize_today#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.3",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "bcrypt-nodejs": "latest",
+    "morgan": "~1.0.0",
+    "express-session": "~1.0.0"
+  }
+}
