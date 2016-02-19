@@ -18,15 +18,16 @@
   },
   "homepage": "https://github.com/karbonbased/visualize_today#readme",
   "dependencies": {
+    "bcrypt-nodejs": "latest",
     "body-parser": "^1.15.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "express-session": "~1.0.0",
+    "later": "^1.2.0",
     "method-override": "^2.3.5",
     "mongoose": "^4.4.3",
-    "passport": "~0.1.17",
-    "passport-local": "~0.1.6",
-    "bcrypt-nodejs": "latest",
     "morgan": "~1.0.0",
-    "express-session": "~1.0.0"
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6"
   }
 }
