@@ -4,6 +4,13 @@
 	<% include ../partials/head.ejs %>
 </head>
 <body>
-
+<p>Sign-Up</p>
+	<form action="/users" method="POST">
+		<input type="text" name="firstName" placeholder="First Name"></input>
+		<input type="text" name="lastName" placeholder="Last Name"></input>
+		<input type="text" name="email" placeholder="email"></input>
+		<input type="text" name="password" placeholder="password"></input>
+		<button>SUBMIT</button>
+	</form>
 </body>
 </html>

@@ -4,6 +4,19 @@
 	<% include ../partials/head.ejs %>
 </head>
 <body>
+HELLO
+<%= users.firstName %>
+<% for (var i = 0; i < users.length; i++) { %>
+<p>Hello</p>
+<%= users[i].firstName %>
+<% } %>
 
+
+	<% if (usertrue) { %>
+					<form action="/users/<%=users.id%>?_method=DELETE" method="POST">
+						<input type="hidden" name="_method" value="DELETE">
+						<button id="delete-button">Delete User</button>
+					</form>
+					<% } %>
 </body>
 </html>

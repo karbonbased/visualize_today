@@ -1,3 +1,47 @@
 body {
-	background-color: red;
+	background-color: rgb(40,40,40);
+	color: white;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: #4DDEB3;
+}
+
+.bar {
+	margin: 0 auto;
+	display: flex;
+	align-items: flex-end;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: nowrap;
+	background-color: black;
+	width: 100%;
+	padding: 20px;
+}
+
+.nav-items {
+	display: flex;
+	flex: 1;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: space-around;
+	flex-direction: row;
+}
+
+#logo {
+	align-self: left;
+	margin-bottom: -3px;
+}
+
+#sign-in-nav {
+	display: flex;
+	justify-content: space-between;
+	margin-right: 0.3em;
 }

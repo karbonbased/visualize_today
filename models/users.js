@@ -4,10 +4,10 @@ var Task = require('./tasks.js');
 var bcrypt = require('bcrypt-nodejs');
 
 var userSchema = mongoose.Schema({
-	email: String,
-	password: String,
 	firstName: String,
 	lastName: String,
+	email: String,
+	password: String,
 	dateCreated: { type:Date, default:Date.now },
 	tasks: [Task]
 })
