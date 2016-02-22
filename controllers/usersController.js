@@ -38,6 +38,52 @@ router.get('/:id', isLoggedIn, function(req, res) {
 	})
 })
 
+// EDIT //
+router.get('/:id/edit', isLoggedIn, function(req, res) {
+	res.locals.login = req.isAuthenticated()
+	Task.findById(req.params.id, function(err, tasks) {
+		res.render('users/edit.ejs', {tasks: tasks});
+	})
+})
+
+// UPDATE TASK //
+router.put('/:id', function(req,res) {
+	// update the tasks document
+	Task.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err,task) {
+		console.log("task is " + task)
+		console.log("UPDATED!")
+
+			// update the user
+	User.update(  {"tasks._id" : req.params.id }, 
+		{$set: 
+			{ "tasks.$.name": task.name , 
+			 "tasks.$.image": task.image , 
+			 "tasks.$.time": task.time }
+			}, 
+			function(err, data) {
+			res.redirect('/users')
+
+	})
+	});
+})
+
+// DELETE TASK //
+router.delete('/:id/delete', function(req, res){
+	Task.findByIdAndRemove(req.params.id, function(err, task){
+		console.log(task)
+		console.log(req.user.id)
+		var oneTask = task
+
+		User.findById( req.user.id, function(err, user) {
+			user.tasks.id(req.params.id).remove()
+			user.save(function() {
+				res.redirect('/users')
+			});
+		});
+	});
+})
+
+
 // JSON //
 router.get('/:id/json', function(req, res) {
 	User.findById(req.params.id, function(err,json) {

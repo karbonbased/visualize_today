@@ -36,6 +36,10 @@
 		<div class="image-box">
 			<img src="<%=tasks[i].image%>">
 			<div class="caption"><%=tasks[i].name%></div>
+			<form action="/tasks/<%=tasks[i].id%>?_method=PUT" method="POST">
+				<input type="hidden" name="_method" value="PUT">
+				<button id="delete-button">ADD TASK</button>
+			</form>
 		</div>
 		<% } %>
 	</div>

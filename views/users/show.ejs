@@ -36,11 +36,13 @@
 
 	<div class="image-area">
 	<% for (var i = 0; i < users.tasks.length; i++) { %>
-		<div class="image-box">
-			<div class="time"><%=users.tasks[i].time%></div>
-			<img src="<%=users.tasks[i].image%>">
-			<div class="caption"><%=users.tasks[i].name%></div>
-		</div>
+			<div class="image-box">
+			<a href="/users/<%=users.tasks[i].id%>/edit">
+				<div class="time"><%=users.tasks[i].time%></div>
+				<img src="<%=users.tasks[i].image%>">
+				<div class="caption"><%=users.tasks[i].name%></div>
+			</div>
+		</a>
 	<% } %>
 	</div>
 
