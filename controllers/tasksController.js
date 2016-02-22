@@ -7,9 +7,9 @@ var User = require('../models/users.js');
 // INDEX //
 router.get('/', function(req, res) {
 	res.locals.login = req.isAuthenticated()
-	// User.findById(req.user.id, function(err, users) {
-	res.render('tasks/index.ejs');
-	// })
+	Task.find({}, function(err, tasks) {
+	res.render('tasks/index.ejs', {tasks: tasks});
+	});
 });
 
 // JSON //

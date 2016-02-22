@@ -62,6 +62,10 @@ a:hover {
 	margin-bottom: -3px;
 }
 
+#logo img {
+	width: 75%
+}
+
 #sign-in-nav {
 	display: flex;
 	justify-content: space-between;
@@ -115,7 +119,7 @@ main p {
 .image-area {
 	margin: 0;
 	  padding: .5vw;
-  font-size: 0;
+  font-size: 1em;
   display: -ms-flexbox;
   -ms-flex-wrap: wrap;
   -ms-flex-direction: column;
@@ -130,11 +134,36 @@ main p {
 -webkit-box-flex: auto;
   -ms-flex: auto;
   flex: auto; 
-  height: 300px; 
+  width: 200px; 
   margin: .5vw; 
 }
 
 .image-box img {
-	width: auto; 
-  height: 100%; 
+	width: 100%; 
+  height: auto; 
+}
+
+/*.caption-container {
+	background-color: rgba(10,10,10,0.5);
+	display: flex;
+}*/
+
+.caption {
+	background-color: rgba(10,10,10,0.5);
+	color: white;
+	font-family: ApexMedium;
+	font-size: 0.8em;
+	padding: 0.7em;
+	position: relative;
+	bottom: 35px;
+}
+
+.time {
+	background-color: rgba(10,10,10,0.5);
+	color: white;
+	font-family: ApexMedium;
+	font-size: 0.8em;
+	padding: 0.7em;
+	position: relative;
+	top: 35px;
 }
