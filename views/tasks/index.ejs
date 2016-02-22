@@ -19,15 +19,27 @@
 		<% } %>
 
 		<% if (login) { %>
-			<a href="/users/" class="nav-items" id="selected-nav">MY DAY</a>
-			<a href="/users/new" class="nav-items" >CREATE A NEW TASK</a>
-			<a href="/tasks" class="nav-items">TASKS</a> 
+			<a href="/users/" class="nav-items">MY DAY</a>
+			<a href="/users#create" class="nav-items" >CREATE A NEW TASK</a>
+			<a href="/tasks" class="nav-items" id="selected-nav">TASKS</a> 
 			<a href="/logout" class="nav-logout">
 		
 			LOG OUT
 			</a>
 		<% } %>
 	</nav>
+<main>
+	<h1>TASK LIBRARY</h1>
+
+	<div class="image-area">
+		<% for (var i = 0; i < tasks.length; i++) { %>
+		<div class="image-box">
+			<img src="<%=tasks[i].image%>">
+			<div class="caption"><%=tasks[i].name%></div>
+		</div>
+		<% } %>
+	</div>
+</main>
 
 </body>
 </html>
