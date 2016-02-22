@@ -49,15 +49,33 @@
 	<br>
 
 		<% if (usertrue) { %>
-		<a id="create">
-			<h2>Create a New Task</h2>
-			<form action="/users/<%=users.id%>" method="POST">
-			NAME:	<input type="text" name="name" placeholder="NAME">
-			IMAGE:	<input type="text" name="image" placeholder="IMAGE">
-			TIME:	<input type="text" name="time" placeholder="TIME">
-				<button>CREATE</button>
-			</form>
-		</a>
+		<div id="create-section">
+			<a id="create">
+				<h2>Create a New Task</h2>
+				<form action="/users/<%=users.id%>" method="POST">
+				NAME:	<input type="text" name="name" placeholder="NAME">
+				IMAGE:	<input type="text" name="image" placeholder="IMAGE">
+				TIME:	<input type="text" name="time" placeholder="TIME">
+					<button>CREATE</button>
+				</form>
+				<br/>
+				ALL FIELDS ARE REQUIRED
+				<!-- , FIND OUT MORE BELOW
+				<div id="accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+					<h3 class="ui-accordion-header ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e">NAME FIELD</span></h3>
+					<div>
+  					  <p>You can call your task anything you like, this is the least restrictive field. However, it is still required.</p>
+  					</div>
+				 	<h3 class="ui-accordion-header ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e">IMAGE FIELD</span></span></h3>
+					<div>
+					    <p>Please include a full URL link included the HTTP</p>
+					</div>
+				  	<h3 class="ui-accordion-header ui-state-default ui-accordion-icons ui-corner-all" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e">TIME FIELD</span></h3>
+					<div>
+					    <p>Here's our most restrictive field, please use Military time and whole numbers on the hour. So for 5 PM, please write 17. 0 is the minimum and 23 is the maximum </p>
+					</div> -->
+			</a>
+		</div>
 		<% } %>
 	<br>
 	<br>

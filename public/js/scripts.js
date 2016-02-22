@@ -1,1 +1,12 @@
-console.log("working");
+$( document ).ready(function() {
+
+	console.log("working");
+
+
+ $(function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  });
+
+ });
