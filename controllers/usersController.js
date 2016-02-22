@@ -5,25 +5,32 @@ var User = require('../models/users.js');
 var Task = require ('../models/tasks.js');
 var passport = require('passport');
 
-// INDEX //
-router.get('/', function(req, res) {
+// INDEX // AS REDIRECT
+router.get('/', isLoggedIn, function(req, res) {
 	res.locals.login = req.isAuthenticated()
-	User.find({}, function(err, users) {
-		console.log(err)
-	res.render('users/index.ejs', {users: users});
-	});
+	res.redirect('/users/' + req.user.id)
 });
 
-// // NEW //
-// router.get('/signup', function(req, res) {
-// 	res.render('signup.ejs')
-// })
+// INDEX //
+// router.get('/', function(req, res) {
+// 	res.locals.login = req.isAuthenticated()
+// 	User.find({}, function(err, users) {
+// 		console.log(err)
+// 	res.render('users/index.ejs', {users: users});
+// 	});
+// });
 
-// LOGOUT //
-
+// NEW //
+router.get('/new', function(req, res) {
+	res.locals.login = req.isAuthenticated()
+	res.locals.users = req.user.id
+	// res.send('hi')
+	res.render('users/new.ejs')
+})
 
 // SHOW //
 router.get('/:id', isLoggedIn, function(req, res) {
+	res.locals.login = req.isAuthenticated()
 	res.locals.usertrue = (req.user.id == req.params.id);
 	User.findById(req.params.id, function(err, users) {
 	res.render('users/show.ejs', {users: users});
@@ -51,7 +58,18 @@ router.post('/login', passport.authenticate('local-login', {
 });
 
 // CREATE TASK //
-
+router.post('/:id', function(req, res) {
+	var newTask = new Task(req.body);
+	newTask.save(function(err, task) {
+		User.findById(req.params.id, function(err, user) {
+			user.tasks.push(task);
+			user.save(function(err, data) {
+				console.log("new task created and saved to user");
+				res.redirect('/users/' + req.params.id);
+			})
+		})
+	})
+})
 
 // DELETE //
 router.delete('/:id', function(req, res){

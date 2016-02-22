@@ -4,13 +4,26 @@
 	<% include ../partials/head.ejs %>
 </head>
 <body>
-<p>Sign-Up</p>
-	<form action="/users" method="POST">
-		<input type="text" name="firstName" placeholder="First Name"></input>
-		<input type="text" name="lastName" placeholder="Last Name"></input>
-		<input type="text" name="email" placeholder="email"></input>
-		<input type="text" name="password" placeholder="password"></input>
-		<button>SUBMIT</button>
-	</form>
+	<nav class="bar">
+		<div id="logo"><img src="../img/ritual-app-logo.png"></div>
+		<% if (!login) { %> 
+			<form action="/users/login" method="POST" class="nav-items">
+				<div class="nav-items">Log In</div>
+				<input type="text" name="email" placeholder="Email" class="nav-items" id="sign-in-nav"></input>
+				<input type="text" name="password" placeholder="Password" class="nav-items" id="sign-in-nav"></input>
+				<button class="nav-items" id="sign-in-nav">LOGIN</button>
+			</form>
+			<a href="/signup" class="nav-items">
+				<div class="nav-items"> Sign Up</div>
+			</a>
+		<% } %>
+
+		<% if (login) { %>
+			<a href="/users/<%=users.id%>" class="nav-items">MY DAY</a>
+			<a href="/users/new" class="nav-items">CREATE A NEW TASK</a>
+			<a href="/tasks" class="nav-items">TASKS</a>
+			<a href="/logout" class="nav-items">LOG OUT</a>
+		<% } %>
+	</nav>
 </body>
 </html>

@@ -1,6 +1,6 @@
 // REQUIREMENTS //
 var mongoose = require('mongoose');
-var Task = require('./tasks.js');
+var TaskSchema = require('./tasks').schema;
 var bcrypt = require('bcrypt-nodejs');
 
 var userSchema = mongoose.Schema({
@@ -9,7 +9,7 @@ var userSchema = mongoose.Schema({
 	email: String,
 	password: String,
 	dateCreated: { type:Date, default:Date.now },
-	tasks: [Task]
+	tasks: [TaskSchema]
 })
 
 // HASH THE PASSWORD //

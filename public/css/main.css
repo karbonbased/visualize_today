@@ -1,8 +1,25 @@
+@font-face {
+    font-family: ApexBold;
+    src: url('../fonts/ApexSansBoldST.ttf');
+}
+
+@font-face {
+    font-family: ApexBook;
+    src: url('../fonts/ApexSansBookC.ttf');
+}
+
+@font-face {
+    font-family: ApexMedium;
+    src: url('../fonts/ApexSansMediumT.ttf');
+}
+
 body {
-	background-color: rgb(40,40,40);
+	background-color: rgb(108,110,113);
 	color: white;
 	box-sizing: border-box;
 	margin: 0 auto;
+	font-family: ApexBook;
+	text-transform: uppercase;
 }
 
 a {
@@ -33,6 +50,11 @@ a:hover {
 	align-items: flex-start;
 	justify-content: space-around;
 	flex-direction: row;
+	text-transform: uppercase;
+}
+
+.nav-items input {
+	text-transform: none;
 }
 
 #logo {
@@ -44,4 +66,75 @@ a:hover {
 	display: flex;
 	justify-content: space-between;
 	margin-right: 0.3em;
+}
+
+#selected-nav {
+	color: #4DDEB3;
+}
+
+.nav-logout {
+	display: flex;
+	flex-direction: column;
+	text-transform: uppercase;
+	justify-content: space-around;
+	margin-right: 3em;
+}
+
+#greeting {
+	color: white;
+	text-transform: uppercase;
+}
+
+#greeting a:hover {
+	color: white;
+}
+
+main {
+	text-align: center;
+}
+
+main h1 {
+	font-family: ApexBold;
+	letter-spacing: .08em;
+	font-kerning: normal;
+	color: rgba(240, 240, 240, 0.8);
+	text-transform: uppercase;
+}
+
+main p {
+	font-size: 2em;
+	width: 75%;
+	margin: 0 auto;
+
+}
+
+#create {
+	color: white;
+}
+
+.image-area {
+	margin: 0;
+	  padding: .5vw;
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap; 
+  flex-flow: row wrap; 
+  display: -webkit-box;
+  display: flex;
+
+}
+
+.image-box {
+-webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto; 
+  height: 300px; 
+  margin: .5vw; 
+}
+
+.image-box img {
+	width: auto; 
+  height: 100%; 
 }

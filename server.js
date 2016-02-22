@@ -13,6 +13,7 @@ var later = require('later');
 
 var usersController = require('./controllers/usersController.js');
 var tasksController = require('./controllers/tasksController.js');
+// var routes = require('./routes.js')
 
 // MIDDLEWARE //
 require('./config/passport.js')(passport);
@@ -71,6 +72,7 @@ app.use(passport.session());
 // ROUTING //
 app.use('/tasks', tasksController);
 app.use('/users', usersController);
+// app.use('routes.js', routes)
 
 // INDEX //
 app.get('/', function(req, res) {
