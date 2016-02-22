@@ -13,8 +13,16 @@
     src: url('../fonts/ApexSansMediumT.ttf');
 }
 
+html {
+    min-height: 100%;
+    background:
+        radial-gradient(transparent, black),
+        url("http://www.techychennai.com/wp-content/uploads/2014/02/dark-black-website-background.jpg");
+    background-size: cover;
+}
+
 body {
-	background-color: rgb(108,110,113);
+	/*background-color: rgb(108,110,113);*/
 	color: white;
 	box-sizing: border-box;
 	margin: 0 auto;
@@ -112,6 +120,13 @@ main p {
 
 }
 
+#create-section {
+	background-color: rgba(110,110,110,0.5);
+	width: 100%;
+	height: auto;
+	padding: 1.5em;
+}
+
 #create {
 	color: white;
 }
@@ -165,5 +180,50 @@ main p {
 	font-size: 0.8em;
 	padding: 0.7em;
 	position: relative;
-	top: 35px;
+	top: 31px;
+}
+
+/*ACCORDIAN*/
+.ui-widget {
+	font-family: ApexBook;
+	font-size: 0.8em;
+}
+
+.ui-helper-reset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	line-height: 1em;
+	text-decoration: none;
+	font-size: 100%;
+	list-style: none;
+}
+
+.ui-accordian .ui-accordian-icons {
+	padding-left: 2.2em;
+}
+
+.ui-accordian .ui-accordian-header {
+	display: block;
+	cursor: pointer;
+	position: relative;
+	margin: 2px 0 0 0;
+	padding: .5em .5em .5em .7em;
+	min-height: 0;
+	font-size: 100%
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+	border-top-right-radius: 4px;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+	border-top-left-radius: 4px
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+	border: 1px solid #aaaaaa;
+	background: #ffffff url("img/swirl_pattern.png") 50% 50% repeat-x;
+
 }
