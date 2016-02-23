@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
+var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/visualize';
 var passport = require('passport');
 var logger = require('morgan');
 var session = require('express-session');
@@ -92,7 +93,7 @@ app.get('/logout', function(req, res){
 })
 
 // CONNECTIONS //
-mongoose.connect('mongodb://localhost:27017/visualize');
+mongoose.connect(mongoUri);
 
 app.listen(port, function() {
 	console.log('listening on port ' + port)
