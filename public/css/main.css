@@ -183,6 +183,22 @@ main p {
 	top: 31px;
 }
 
+#add-button {
+	margin-bottom: 5em;
+}
+
+#delete-button {
+	margin-bottom: 5em;
+}
+
+#delete-section {
+	margin-top: 5em;
+}
+
+#danger-zone {
+	color: rgba(245,25,25,0.7);
+}
+
 /*ACCORDIAN*/
 .ui-widget {
 	font-family: ApexBook;

@@ -82,10 +82,13 @@
 	<br>
 	<br>
 		<% if (usertrue) { %>
+		<section id="delete-section">
+		<span id="danger-zone">WARNING: DELETE USER ACTION IRREVOCABLE</span>
 			<form action="/users/<%=users.id%>?_method=DELETE" method="POST">
 				<input type="hidden" name="_method" value="DELETE">
-				<button id="delete-button">Delete User</button>
+				<button id="delete-button">DELETE USER</button>
 			</form>
+		</section>
 		<% } %>
 
 </main>
