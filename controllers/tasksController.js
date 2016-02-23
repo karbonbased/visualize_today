@@ -12,6 +12,14 @@ router.get('/', function(req, res) {
 	});
 });
 
+// JSON //
+router.get('/json', function(req, res) {
+    Task.find({}, function(err, json) {
+res.send(json)
+    })
+})
+
+
 // SHOW //
 router.get('/:id', function(req, res) {
     res.locals.login = req.isAuthenticated()
@@ -20,12 +28,6 @@ router.get('/:id', function(req, res) {
     res.render('tasks/show.ejs', {tasks: tasks});
     });
 });
-
-// JSON //
-// router.get('/json', function(req, res) {
-// 	find by id and callback
-// 	res.send(callback)
-// })
 
 
 // UPDATE //
