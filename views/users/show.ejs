@@ -23,6 +23,7 @@
 			<a href="/users/" class="nav-items" id="selected-nav">MY DAY</a>
 			<a href="#create" class="nav-items" >CREATE A NEW TASK</a>
 			<a href="/tasks" class="nav-items">TASKS</a> 
+			<a href="/users/userlib" class="nav-items">USERS</a> 
 			<a href="/logout" class="nav-logout">
 			LOG OUT
 			</a>
@@ -38,7 +39,6 @@
 	<% for (var i = 0; i < users.tasks.length; i++) { %>
 			<div class="image-box">
 			<a href="/users/<%=users.tasks[i].id%>/edit">
-				<div class="time"><%=users.tasks[i].time%></div>
 				<img src="<%=users.tasks[i].image%>">
 				<div class="caption"><%=users.tasks[i].name%></div>
 			</div>
