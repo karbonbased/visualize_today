@@ -12,6 +12,15 @@ router.get('/', function(req, res) {
 	});
 });
 
+// SHOW //
+router.get('/:id', function(req, res) {
+    res.locals.login = req.isAuthenticated()
+    // res.locals.user = req.user.id
+    Task.findById(req.params.id, function(err, tasks) {
+    res.render('tasks/show.ejs', {tasks: tasks});
+    });
+});
+
 // JSON //
 // router.get('/json', function(req, res) {
 // 	find by id and callback
@@ -19,7 +28,18 @@ router.get('/', function(req, res) {
 // })
 
 
-// SHOW //
+// UPDATE //
+router.put('/:id', isLoggedIn, function(req, res) {
+    User.findById(req.user.id, function(err, user) {
+        console.log(user)
+    Task.findById(req.params.id, function(err, tasks) {
+        user.tasks.push(tasks);
+        user.save(function(err, datt) {
+            res.redirect('/tasks')
+        })
+        })
+    })
+})
 
 
 // MIDDLEWARE //
