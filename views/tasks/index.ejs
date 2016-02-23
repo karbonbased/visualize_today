@@ -2,6 +2,8 @@
 <html>
 <head>
 	<% include ../partials/head.ejs %>
+		<script type="text/javascript" src="../../js/scripts.js"></script>
+
 </head>
 <body>
 	<nav class="bar">
@@ -34,13 +36,11 @@
 	<div class="image-area">
 		<% for (var i = 0; i < tasks.length; i++) { %>
 		<div class="image-box">
+			<a href="/tasks/<%=tasks[i].id%>">
 			<img src="<%=tasks[i].image%>">
 			<div class="caption"><%=tasks[i].name%></div>
-			<form action="/tasks/<%=tasks[i].id%>?_method=PUT" method="POST">
-				<input type="hidden" name="_method" value="PUT">
-				<button id="delete-button">ADD TASK</button>
-			</form>
 		</div>
+		</a>
 		<% } %>
 	</div>
 </main>
