@@ -7,8 +7,8 @@ var passport = require('passport');
 
 // INDEX // AS REDIRECT
 router.get('/', isLoggedIn, function(req, res) {
-	res.locals.login = req.isAuthenticated()
-	res.redirect('/users/' + req.user.id)
+	res.locals.login = req.isAuthenticated();
+	res.redirect('/users/' + req.user.id);
 });
 
 // INDEX //
@@ -20,13 +20,22 @@ router.get('/', isLoggedIn, function(req, res) {
 // 	});
 // });
 
-// NEW //
-router.get('/new', function(req, res) {
-	res.locals.login = req.isAuthenticated()
-	res.locals.users = req.user.id
-	// res.send('hi')
-	res.render('users/new.ejs')
+// USER LIBRARY //
+router.get('/userlib', isLoggedIn, function(req, res) {
+	res.locals.login = req.isAuthenticated();
+	res.locals.usertrue = (req.user.id == req.params.id);
+	User.find({}, function(err, users) {
+		res.render('users/userlib.ejs', {users: users});
+	})
 })
+
+// NEW //
+// router.get('/new', function(req, res) {
+// 	res.locals.login = req.isAuthenticated()
+// 	res.locals.users = req.user.id
+// 	// res.send('hi')
+// 	res.render('users/new.ejs')
+// })
 
 // SHOW //
 router.get('/:id', isLoggedIn, function(req, res) {
