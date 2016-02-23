@@ -17,28 +17,31 @@ $( document ).ready(function() {
 //     });
 //   });
 
-$.ajax('/tasks/json')
-	.done(function(result) {
-		var $imageArea = $('div.image-area');
-		var timeArray =[];
-		var $imageBox = $('<div>');
-		var $caption = $('<div>');
-		for (var i=0; i < result.length; i++) {
-			console.log("i'm in the loop")
-			$imageBox.addClass("image-box");
-			$imageBox.attr("name", result[i].time);
-			$imageBox.append('<img src =/"result[i].image/">');
-			$caption.addClass("caption");
-			$caption.html("result[i].name");
-			$imageBox.append($caption);
-			$imageBox.appendTo($imageArea);
-			// console.log(result[i].time);
-			// timeArray.push(result[i].time);
-			// console.log(timeArray);
-			// timeArray.sort()
-			// console.log(timeArray);
-		}
-	})
+// $.ajax('/tasks/json')
+// 	.done(function(result) {
+// 		var $imageArea = $('div.image-area');
+// 		var timeArray =[];
+// 		var $imageBox = $('<div>');
+// 		var $caption = $('<div>');
+// 		var $image = $('<img>')
+// 		for (var i=0; i < result.length; i++) {
+// 			console.log("i'm in the loop")
+// 			$imageBox.addClass("image-box");
+// 			$imageBox.attr("name", result[i].time);
+// 			$imageBox.append($image);
+// 			console.log($image)
+// 			$image.attr("src", result[i].image)
+// 			$caption.addClass("caption");
+// 			$caption.html(result[i].name);
+// 			$imageBox.append($caption);
+// 			$imageBox.appendTo($imageArea);
+// 			// console.log(result[i].time);
+// 			// timeArray.push(result[i].time);
+// 			// console.log(timeArray);
+// 			// timeArray.sort()
+// 			// console.log(timeArray);
+// 		}
+// 	})
 
 		// <% for (var i = 0; i < tasks.length; i++) { %>
 		// <div class="image-box" name="<%=tasks[i].time%>">
