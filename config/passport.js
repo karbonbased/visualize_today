@@ -50,6 +50,7 @@ passport.use('local-signup', new LocalStrategy({
                 // set the user's local credentials
                 newUser.firstName = req.body.firstName;
                 newUser.lastName = req.body.lastName;
+                newUser.userIcon = req.body.userIcon;
                 newUser.email    = email;
                 newUser.password = newUser.hash(password);
 
