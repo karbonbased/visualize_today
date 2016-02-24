@@ -36,7 +36,7 @@ router.put('/:id', isLoggedIn, function(req, res) {
         console.log(user)
     Task.findById(req.params.id, function(err, tasks) {
         user.tasks.push(tasks);
-        user.save(function(err, datt) {
+        user.save(function(err, data) {
             res.redirect('/tasks')
         })
         })
