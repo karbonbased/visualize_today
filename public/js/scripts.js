@@ -2,6 +2,14 @@ $( document ).ready(function() {
 
 	console.log("working");
 
+
+$('#signup-form input').blur(function()
+{
+    if( !$(this).val() ) {
+          $(this).parents('p').addClass('warning');
+          // alert("Missing Required Fields")
+    }
+});
 // $(function(){
 //     $.ajax({
 //       url: 'http://localhost:27017/visualize',
