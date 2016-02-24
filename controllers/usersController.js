@@ -47,12 +47,15 @@ router.get('/:id', isLoggedIn, function(req, res) {
 	})
 })
 
-// EDIT //
-router.get('/:id/edit', isLoggedIn, function(req, res) {
+// EDIT SPECIFIC TASK ROUTE //
+router.get('/:id/edit/:taskid', isLoggedIn, function(req, res) {
 	res.locals.login = req.isAuthenticated();
-	res.locals.usertrue = (req.user.id == req.params.id);
-	Task.findById(req.params.id, function(err, tasks) {
+	res.locals.usertrue = (req.params.id == req.user.id)
+	User.findById(req.params.id, function(err, user) {
+	console.log("user is " + user);
+	Task.findById(req.params.taskid, function(err,tasks) {
 		res.render('users/edit.ejs', {tasks: tasks});
+	})
 	})
 })
 

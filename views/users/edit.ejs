@@ -2,11 +2,12 @@
 <html>
 <head>
 	<% include ../partials/head.ejs %>
-	<script type="text/javascript" src="../../js/scripts.js"></script>
+	<link rel="stylesheet" type="text/css" href="../../../css/main.css">
+	<script type="text/javascript" src="../../../js/scripts.js"></script>
 </head>
 <body>
 	<nav class="bar">
-		<div id="logo"><img src="../../img/white-logo-2.png"></div>
+		<div id="logo"><img src="../../../img/white-logo-2.png"></div>
 		<% if (!login) { %> 
 			<form action="/users/login" method="POST" class="nav-items">
 				<div class="nav-items">Log In</div>
@@ -39,7 +40,8 @@
 	</div>
 	<div class="time"><%=tasks.time%></div>
 
-<% if (usertrue) { %>
+
+<% if (usertrue) { %> 
 	<h2>UPDATE THIS TASK</h2>
 	<form action="/users/<%=tasks.id%>?_method=PUT" method="POST">
 		<input type="hidden" name="_method" value="PUT">
