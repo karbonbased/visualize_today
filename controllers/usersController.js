@@ -49,7 +49,8 @@ router.get('/:id', isLoggedIn, function(req, res) {
 
 // EDIT //
 router.get('/:id/edit', isLoggedIn, function(req, res) {
-	res.locals.login = req.isAuthenticated()
+	res.locals.login = req.isAuthenticated();
+	res.locals.usertrue = (req.user.id == req.params.id);
 	Task.findById(req.params.id, function(err, tasks) {
 		res.render('users/edit.ejs', {tasks: tasks});
 	})
