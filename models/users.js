@@ -8,6 +8,7 @@ var userSchema = mongoose.Schema({
 	lastName: String,
 	email: String,
 	password: String,
+	userIcon: String,
 	dateCreated: { type:Date, default:Date.now },
 	tasks: [TaskSchema]
 })
