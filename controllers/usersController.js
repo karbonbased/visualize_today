@@ -78,7 +78,7 @@ router.put('/:id', function(req,res) {
 
 // DELETE TASK //
 router.delete('/:id/delete', function(req, res){
-	Task.findByIdAndRemove(req.params.id, function(err, task){
+	Task.findById(req.params.id, function(err, task){
 		console.log(task)
 		console.log(req.user.id)
 		var oneTask = task
