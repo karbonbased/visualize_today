@@ -39,7 +39,7 @@
 	</div>
 	<div class="time"><%=tasks.time%></div>
 
-
+<% if (usertrue) { %>
 	<h2>UPDATE THIS TASK</h2>
 	<form action="/users/<%=tasks.id%>?_method=PUT" method="POST">
 		<input type="hidden" name="_method" value="PUT">
@@ -53,7 +53,7 @@
 				<input type="hidden" name="_method" value="DELETE">
 				<button id="delete-button">DELETE TASK</button>
 			</form>
-
+<% } %>
 
 </main>
 </body>
