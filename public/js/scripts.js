@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-	console.log("working");
+	// console.log("working");
 
 // function overlay() {
 // 	el = document.getElementById("overlay");
