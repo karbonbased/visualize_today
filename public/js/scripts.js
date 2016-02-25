@@ -2,16 +2,20 @@ $( document ).ready(function() {
 
 	console.log("working");
 
+// function overlay() {
+// 	el = document.getElementById("overlay");
+// 	el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+// }
 
-$('#signup-form input').blur(function()
-{
-    if( !$(this).val() ) {
-          $(this).parents('p').addClass('warning');
-          // alert("Missing Required Fields")
-    }
-});
+// $('#signup-form input').blur(function()
+// {
+//     if( !$(this).val() ) {
+//           $(this).parents('p').addClass('warning');
+//           // alert("Missing Required Fields")
+//     }
+// });
 
-$('')
+// $('')
 // $(function(){
 //     $.ajax({
 //       url: 'http://localhost:27017/visualize',
