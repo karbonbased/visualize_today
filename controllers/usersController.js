@@ -11,6 +11,15 @@ router.get('/', isLoggedIn, function(req, res) {
 	res.redirect('/users/' + req.user.id);
 });
 
+// INDEX //
+// router.get('/', function(req, res) {
+// 	res.locals.login = req.isAuthenticated()
+// 	User.find({}, function(err, users) {
+// 		console.log(err)
+// 	res.render('users/index.ejs', {users: users});
+// 	});
+// });
+
 // USER LIBRARY //
 router.get('/userlib', isLoggedIn, function(req, res) {
 	res.locals.login = req.isAuthenticated();
@@ -20,13 +29,21 @@ router.get('/userlib', isLoggedIn, function(req, res) {
 	})
 })
 
+// NEW //
+// router.get('/new', function(req, res) {
+// 	res.locals.login = req.isAuthenticated()
+// 	res.locals.users = req.user.id
+// 	// res.send('hi')
+// 	res.render('users/new.ejs')
+// })
+
 // SHOW //
 router.get('/:id', isLoggedIn, function(req, res) {
 	res.locals.login = req.isAuthenticated()
 	res.locals.usertrue = (req.user.id == req.params.id);
-	res.locals.
 	User.findById(req.params.id, function(err, users) {
 	res.render('users/show.ejs', {users: users});
+	// res.send(users)
 	})
 })
 
