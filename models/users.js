@@ -8,7 +8,7 @@ var userSchema = mongoose.Schema({
 	lastName: String,
 	email: String,
 	password: String,
-	userIcon: {type: String, default:"../img/usericons/usericon-master.jpg" },
+	userIcon: {type: String, required: true, default:"../img/usericons/usericon-master.jpg" },
 	dateCreated: { type:Date, default:Date.now },
 	tasks: [TaskSchema]
 })
