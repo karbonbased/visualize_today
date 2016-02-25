@@ -314,7 +314,49 @@ main p {
   display: -webkit-box;
   display: flex;
   width: 80%;
+}
 
+.image-area-user-edit {
+	margin: 0 auto;
+	padding: .5vw;
+	font-size: 1em;
+	display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    -ms-flex-direction: column;
+    -webkit-flex-flow: row wrap; 
+	flex-flow: row wrap; 
+	display: -webkit-box;
+	display: flex;
+	width: 69%;
+}
+
+#update-task {
+	display: flex;
+	flex-direction: column;
+}
+
+#update-task p {
+	font-family: ApexMedium;
+	font-size: 1em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0.6em 1em 0em 4em;
+	align-self: center;
+}
+
+#update-task input {
+	border: .2em solid #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: rgb(47, 47, 47);
+    font-family: ApexMedium;
+    padding: 10px;
+    width: 40%;
+    border-radius: 3px;
+    margin: 5px;
+    display: flex;
+    justify-content: flex-start;
+    flex: 1 1 fit-content;
 }
 /*.caption-container {
 	background-color: rgba(10,10,10,0.5);
@@ -332,13 +374,13 @@ main p {
 }
 
 .time {
-	background-color: rgba(10,10,10,0.5);
+	background-color: rgba(110,110,110,0.5);
 	color: white;
 	font-family: ApexMedium;
 	font-size: 0.8em;
 	padding: 0.7em;
 	position: relative;
-	top: 31px;
+	bottom: 31px;
 }
 
 #add-button {
@@ -549,11 +591,76 @@ color: rgba(25,25,25,0.9);
 	background: #ffffff url("img/swirl_pattern.png") 50% 50% repeat-x;
 }
 
-@media(max-width: 900px) {
-/*	* {
+@media(max-width: 650px) {
+	* {
 		background-color: red;
-	}*/
-/*	.nav-items {
-		font-size: 0.9em;
-	}*/
+	}
+	.bar {
+	margin: 0 auto;
+	display: flex;
+	align-items: baseline;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: nowrap;
+	background-color: black;
+	width: 100%;
+	padding: 20px;
+	border: 1px solid rgba(255,255,255,0.5);
+}
+
+.nav-items {
+	display: flex;
+	flex: 1 0 auto;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	justify-content: space-around;
+	flex-direction: row;
+	text-transform: uppercase;
+	align-self: center;
+}
+
+.nav-items input {
+	text-transform: none;
+	flex: 1 0 auto;
+}
+
+#logo {
+	align-self: left;
+	margin-bottom: -3px;
+	order: 1;
+}
+
+#logo img {
+	width: 65%
+}
+
+#sign-in-nav {
+	justify-content: space-between;
+	border: .24em solid #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(47, 47, 47);
+    font-family: ApexMedium;
+    padding: 1px;
+    width: 1em;
+    border-radius: 1px;
+    margin: 5px;
+}
+
+#sign-in-nav:hover {
+	background-color: white;
+	color: rgba(40,40,40,0.8);
+	border: .2em solid #4DDEB3;
+}
+
+#selected-nav {
+	color: #4DDEB3;
+}
+
+.nav-logout {
+	display: flex;
+	flex-direction: column;
+	text-transform: uppercase;
+	justify-content: space-around;
+	margin-right: 3em;
+}
 }

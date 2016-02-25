@@ -34,16 +34,17 @@
 		</nav>
 	</header>
 	<main>
-		<div class="image-area">
+	<form action="/tasks/<%=tasks.id%>?_method=PUT" method="POST">
+				<input type="hidden" name="_method" value="PUT">
+				<button id="add-button">ADD TASK TO MY DAY</button>
+	</form>
+		<div class="image-area-show">
 			<div class="image-box">
 				<img src="<%=tasks.image%>">
 				<div class="caption"><%=tasks.name%></div>
 			</div>
 	</div>
-	<form action="/tasks/<%=tasks.id%>?_method=PUT" method="POST">
-				<input type="hidden" name="_method" value="PUT">
-				<button id="add-button">ADD TASK TO MY DAY</button>
-	</form>
+	
 	</main>
 </body>
 </html>

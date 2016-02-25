@@ -36,28 +36,43 @@
 	</header>
 <main>
 
-	<div class="image-area">
+<% if (usertrue) { %> 
+	<h2>UPDATE THIS TASK</h2>
+<% } %>
+
+<% if (!usertrue) { %>
+	<h2> <%= tasks.name %> </h2>
+<% } %>
+
+	<div class="image-area-user-edit">
 			<div class="image-box">
 				<img src="<%=tasks.image%>">
 				<div class="caption"><%=tasks.name%></div>
 			</div>
-	</div>
-	<div class="time"><%=tasks.time%></div>
-
+	</div>f
+	<div class="time">TIME: &nbsp &nbsp &nbsp<%=tasks.time%></div>
 
 <% if (usertrue) { %> 
-	<h2>UPDATE THIS TASK</h2>
-	<form action="/users/<%=tasks.id%>?_method=PUT" method="POST">
+	<form action="/users/<%=tasks.id%>?_method=PUT" method="POST" id="update-task">
 		<input type="hidden" name="_method" value="PUT">
-		<input type="text" name="name" value="<%= tasks.name %>">
-		<input type="text" name="image" value="<%= tasks.image %>"><br/>
-		<input type="text" name="time" value="<%= tasks.time %>"><br/>
+			<p>NAME:
+				<input type="text" name="name" value="<%= tasks.name %>">
+			</p>
+			<p> IMAGE URL:
+				<input type="text" name="image" value="<%= tasks.image %>">
+			</p>
+			<p>
+				TIME:
+				<input type="text" name="time" value="<%= tasks.time %>">
+			</p>
 		<button>UPDATE</button>
 	</form>
+<% } %>
 
+<% if (usertrue) { %> 
 			<form action="/users/<%=tasks.id%>/delete?_method=DELETE" method="POST">
 				<input type="hidden" name="_method" value="DELETE">
-				<button id="delete-button">DELETE TASK</button>
+				<button id="delete-button">DELETE TASK FROM MY DAY</button>
 			</form>
 <% } %>
 
