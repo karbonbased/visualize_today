@@ -10,7 +10,6 @@ var passport = require('passport');
 var logger = require('morgan');
 var session = require('express-session');
 var cookieParser = require('cookie-parser')
-var later = require('later');
 
 var usersController = require('./controllers/usersController.js');
 var tasksController = require('./controllers/tasksController.js');
@@ -58,17 +57,6 @@ app.use(function(req, res, next) {
 app.use(session({ secret: 'sterceseverywhere'}));
 app.use(passport.initialize());
 app.use(passport.session());
-
-// TESTING CODE WITH LATER
-	// var time = 12.5
-	// var days = later.parse.recur().on(time).hour()
-	
- //  // var daily = later.parse.text('every day at 8:00 AM')//,
- //      occurrences = later.schedule(days).next(10);
- //      // console.log(days);
- //  for(var i = 0; i < 10; i++) {
- //    console.log(occurrences[i]);
- //  }
 
 // ROUTING //
 app.use('/tasks', tasksController);
