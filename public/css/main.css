@@ -1,3 +1,44 @@
+/*RESETTING CSS TO NULLIFY BROWSER DEFAULTS*/
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:after, *:before { 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section {  
+	display: block;
+}
+
+html {
+	font-size: 100%;
+	height: auto !important;
+	height: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+.clear {
+	display: block;	
+}
+
+.clear::after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 1px;
+	visibility: hidden;
+}
+
+/*FONT FACE TO ADD APEX TYPE FACES (Book, Medium and Bold)*/
 @font-face {
     font-family: ApexBold;
     src: url('../fonts/ApexSansBoldST.ttf');
@@ -28,6 +69,7 @@ body {
 	margin: 0 auto;
 	font-family: ApexBook;
 	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -37,6 +79,17 @@ a {
 
 a:hover {
 	color: #4DDEB3;
+}
+
+h2 {
+	    font-family: ApexBook;
+    letter-spacing: .02em;
+    font-kerning: normal;
+    color: rgba(240, 240, 240, 0.9);
+    text-transform: uppercase;
+    font-size: 3.5em;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    margin: 0.3em 0em 0.2em 0em;
 }
 
 .bar {
@@ -290,6 +343,36 @@ main p {
 	background-color: white;
 	color: rgba(40,40,40,0.8);
 	border: .2em solid #4DDEB3;
+}
+
+.user-area {
+	margin: 0 auto;
+	font-size: 1em;
+	flex-flow: row wrap;
+	display: flex;
+}
+
+.user-area img {
+	border: .1em solid white;
+}
+
+.user-caption {
+	/*background-color: rgba(10,10,10,0.5);*/
+    color: white;
+    font-family: ApexBook;
+    font-size: 0.8em;
+    padding: 0.3em;
+    position: relative;
+    bottom: 33px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: auto;
+    flex-wrap: wrap;
+    width: 99%;
+    font-size: 1.2em;
 }
 
 input::-webkit-input-placeholder {

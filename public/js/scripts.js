@@ -10,6 +10,8 @@ $('#signup-form input').blur(function()
           // alert("Missing Required Fields")
     }
 });
+
+$('')
 // $(function(){
 //     $.ajax({
 //       url: 'http://localhost:27017/visualize',
