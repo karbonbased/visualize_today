@@ -10,10 +10,10 @@
 			<div id="logo"><img src="img/white-logo-2.png"></div>
 		</a>
 		<% if (!login) { %> 
-			<form action="/users/login" method="POST" class="nav-items">
+			<form action="/users/login" method="POST" class="nav-items" id="login-form">
 				<div class="nav-items">Log In</div>
-				<input type="text" name="email" placeholder="EMAIL" class="nav-items" id="sign-in-nav"></input>
-				<input type="text" name="password" placeholder="PASSWORD" class="nav-items" id="sign-in-nav"></input>
+				<input type="text" name="email" placeholder="EMAIL" class="nav-items"></input>
+				<input type="text" name="password" placeholder="PASSWORD" class="nav-items"></input>
 				<button class="nav-items" id="sign-in-nav">LOGIN</button>
 			</form>
 			<a href="/signup" class="nav-items">
@@ -30,11 +30,11 @@
 <section id="sign-up-section">
 	<h2>Sign Up</h2>
 	<form action="/users" method="POST" id="signup-form">
-		<input type="text" name="firstName" placeholder="First Name"></input>
-		<input type="text" name="lastName" placeholder="Last Name"></input>
-		<input type="text" name="email" placeholder="email"></input>
-		<input type="text" name="password" placeholder="password"></input>
-		<input type="text" name="userIcon" placeholder="User Avatar: Optional"></input>
+		<input type="text" name="firstName" placeholder="FIRST NAME"></input>
+		<input type="text" name="lastName" placeholder="LAST NAME"></input>
+		<input type="text" name="email" placeholder="EMAIL"></input>
+		<input type="text" name="password" placeholder="PASSWORD"></input>
+		<input type="text" name="userIcon" placeholder="AVATAR LINK (OPTIONAL)"></input>
 		<input type="submit" id="signup-button">
 	</form>
 </section>

@@ -42,7 +42,7 @@ a:hover {
 .bar {
 	margin: 0 auto;
 	display: flex;
-	align-items: flex-end;
+	align-items: baseline;
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: nowrap;
@@ -60,15 +60,18 @@ a:hover {
 	justify-content: space-around;
 	flex-direction: row;
 	text-transform: uppercase;
+	align-self: center;
 }
 
 .nav-items input {
 	text-transform: none;
+	flex: 1 0 auto;
 }
 
 #logo {
 	align-self: left;
 	margin-bottom: -3px;
+	order: 1;
 }
 
 #logo img {
@@ -76,9 +79,21 @@ a:hover {
 }
 
 #sign-in-nav {
-	display: flex;
 	justify-content: space-between;
-	margin-right: 0.3em;
+	border: .24em solid #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(47, 47, 47);
+    font-family: ApexMedium;
+    padding: 1px;
+    width: 1em;
+    border-radius: 1px;
+    margin: 5px;
+}
+
+#sign-in-nav:hover {
+	background-color: white;
+	color: rgba(40,40,40,0.8);
+	border: .2em solid #4DDEB3;
 }
 
 #selected-nav {
@@ -100,6 +115,28 @@ a:hover {
 
 #greeting a:hover {
 	color: white;
+}
+
+#login-form {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+#login-form input {
+	display: flex;
+	flex: 1 0 auto;
+	border: .24em solid #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(47, 47, 47);
+    font-family: ApexMedium;
+    padding: 1px;
+    width: 10%;
+    border-radius: 1px;
+    margin: 5px;
+    display: flex;
+    /*justify-content: flex-start;*/
 }
 
 main {
@@ -206,7 +243,7 @@ main p {
 
 #sign-up-section {
 	margin: 0 auto;
-	padding: 3em;
+	padding: 2em 0em 0em 3em;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -231,7 +268,6 @@ main p {
     width: 40%;
     border-radius: 3px;
     margin: 5px;
-    text-transform: uppercase;
     display: flex;
     justify-content: flex-start;
     flex: 1 0 30%;
@@ -244,10 +280,16 @@ main p {
     justify-content: flex-start;
 }
 
-#signup-button:hover {
+#signup-button {
 	background-color: #4DDEB3;
 	color: white;
-	
+	text-transform: uppercase;
+}
+
+#signup-button:hover {
+	background-color: white;
+	color: rgba(40,40,40,0.8);
+	border: .2em solid #4DDEB3;
 }
 
 input::-webkit-input-placeholder {
