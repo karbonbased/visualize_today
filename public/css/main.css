@@ -102,7 +102,7 @@ h2 {
 	background-color: black;
 	width: 100%;
 	padding: 20px;
-	border: 1px solid rgba(255,255,255,0.5);
+	border-bottom: 1px solid rgba(255,255,255,0.5);
 }
 
 .nav-items {
@@ -286,7 +286,6 @@ main p {
   flex-flow: row wrap; 
   display: -webkit-box;
   display: flex;
-
 }
 
 .image-box {
@@ -295,11 +294,13 @@ main p {
   flex: auto; 
   width: 200px; 
   margin: .5vw; 
+
 }
 
 .image-box img {
 	width: 100%; 
   height: auto; 
+    border: 1px solid white;
 }
 
 .image-area-show {
@@ -313,7 +314,7 @@ main p {
   flex-flow: row wrap; 
   display: -webkit-box;
   display: flex;
-  width: 80%;
+  width: 69%;
 }
 
 .image-area-user-edit {
@@ -340,9 +341,10 @@ main p {
 	font-size: 1em;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: flex-end;
 	margin: 0.6em 1em 0em 4em;
 	align-self: center;
+	line-height: 3em;
 }
 
 #update-task input {
@@ -357,6 +359,21 @@ main p {
     display: flex;
     justify-content: flex-start;
     flex: 1 1 fit-content;
+}
+
+#update-task button {
+	border: .2em solid #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: rgb(47, 47, 47);
+    font-family: ApexMedium;
+    padding: 10px;
+    width: 40%;
+    border-radius: 3px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    flex: 1 1 fit-content;
+    align-self: center;
 }
 /*.caption-container {
 	background-color: rgba(10,10,10,0.5);
@@ -485,6 +502,7 @@ main p {
 	font-size: 1em;
 	flex-flow: row wrap;
 	display: flex;
+	width: 80%;
 }
 
 .user-area img {
@@ -591,11 +609,12 @@ color: rgba(25,25,25,0.9);
 	background: #ffffff url("img/swirl_pattern.png") 50% 50% repeat-x;
 }
 
-@media(max-width: 650px) {
-	* {
+/*MEDIA QUERY TO MOBILE / SMALL TABLETS*/
+/*@media(max-width: 650px) {*/
+/*	* {
 		background-color: red;
-	}
-	.bar {
+	}*/
+/*	.bar {
 	margin: 0 auto;
 	display: flex;
 	align-items: baseline;
@@ -609,25 +628,15 @@ color: rgba(25,25,25,0.9);
 }
 
 .nav-items {
-	display: flex;
-	flex: 1 0 auto;
-	flex-wrap: nowrap;
-	align-items: flex-start;
-	justify-content: space-around;
-	flex-direction: row;
-	text-transform: uppercase;
-	align-self: center;
+	display: none;
 }
 
 .nav-items input {
-	text-transform: none;
-	flex: 1 0 auto;
+	display: none;
 }
 
 #logo {
-	align-self: left;
-	margin-bottom: -3px;
-	order: 1;
+	
 }
 
 #logo img {
@@ -635,21 +644,11 @@ color: rgba(25,25,25,0.9);
 }
 
 #sign-in-nav {
-	justify-content: space-between;
-	border: .24em solid #FFFFFF;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: rgb(47, 47, 47);
-    font-family: ApexMedium;
-    padding: 1px;
-    width: 1em;
-    border-radius: 1px;
-    margin: 5px;
+	display: none;
 }
 
 #sign-in-nav:hover {
-	background-color: white;
-	color: rgba(40,40,40,0.8);
-	border: .2em solid #4DDEB3;
+	display: none;
 }
 
 #selected-nav {
@@ -657,10 +656,6 @@ color: rgba(25,25,25,0.9);
 }
 
 .nav-logout {
-	display: flex;
-	flex-direction: column;
-	text-transform: uppercase;
-	justify-content: space-around;
-	margin-right: 3em;
-}
-}
+	display: none;
+}*/
+/*}*/
