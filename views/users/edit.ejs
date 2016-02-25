@@ -37,7 +37,7 @@
 <main>
 
 <% if (usertrue) { %> 
-	<h2>UPDATE THIS TASK</h2>
+	<h2>UPDATE: &nbsp <%= tasks.name %></h2>
 <% } %>
 
 <% if (!usertrue) { %>
@@ -65,7 +65,7 @@
 				TIME:
 				<input type="text" name="time" value="<%= tasks.time %>">
 			</p>
-		<button>UPDATE</button>
+		<button id="update-button">UPDATE</button>
 	</form>
 <% } %>
 
