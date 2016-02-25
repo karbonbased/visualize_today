@@ -1,5 +1,5 @@
 /*RESETTING CSS TO NULLIFY BROWSER DEFAULTS*/
-* {
+/** {
 	margin: 0;
 	padding: 0;
 	outline: none;
@@ -36,7 +36,7 @@ html {
 	display: block;
 	height: 1px;
 	visibility: hidden;
-}
+}*/
 
 /*FONT FACE TO ADD APEX TYPE FACES (Book, Medium and Bold)*/
 @font-face {
@@ -220,11 +220,60 @@ main p {
 	width: 100%;
 	height: auto;
 	padding: 1.5em;
+	display: flex;
+    flex-flow: column wrap;
+    align-items: center;
 }
 
 #create {
 	color: white;
+	display: flex;
+	flex-flow: column wrap;
 }
+
+#create-form {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+    flex: 1 1 auto;
+    width: 40%;
+    align-self: center;
+}
+
+#create-form input {
+	border: .2em solid #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: rgb(47, 47, 47);
+    font-family: ApexMedium;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#create-form button {
+	background-color: rgba(255, 255, 255, 0.75);
+    color: rgb(47, 47, 47);
+    font-family: ApexMedium;
+    padding: 10px;
+    border: .2em solid #FFFFFF;
+ 	border-radius: 3px;
+    margin: 5px;
+	text-transform: uppercase;
+	align-self: center;
+    width: inherit;
+}
+
+#create-form button:hover {
+	background-color: white;
+	color: rgba(40,40,40,0.8);
+	border: .2em solid #4DDEB3;
+}
+
 
 .image-area {
 	margin: 0;
@@ -253,6 +302,20 @@ main p {
   height: auto; 
 }
 
+.image-area-show {
+	margin: 0 auto;
+	  padding: .5vw;
+  font-size: 1em;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap; 
+  flex-flow: row wrap; 
+  display: -webkit-box;
+  display: flex;
+  width: 80%;
+
+}
 /*.caption-container {
 	background-color: rgba(10,10,10,0.5);
 	display: flex;
@@ -279,11 +342,41 @@ main p {
 }
 
 #add-button {
-	margin-bottom: 5em;
+	margin: 3em auto 2em auto;
+    border: .2em solid #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: rgb(47, 47, 47);
+    font-family: ApexMedium;
+    padding: 10px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: flex-start;
+    flex: 1 0 30%;
+}
+
+#add-button:hover {
+	background-color: white;
+	color: rgba(40,40,40,0.8);
+	border: .2em solid #4DDEB3;
 }
 
 #delete-button {
-	margin-bottom: 5em;
+	margin: 1em auto 3em auto;
+    border: .2em solid #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: rgb(47, 47, 47);
+    font-family: ApexMedium;
+    padding: 10px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: flex-start;
+    flex: 1 0 30%;
+}
+
+#delete-button:hover {
+	background-color: white;
+	color: rgba(40,40,40,0.8);
+	border: .2em solid #4DDEB3;
 }
 
 #delete-section {
@@ -391,6 +484,26 @@ input:-ms-input-placeholder {
 color: rgba(25,25,25,0.9);  
 }
 
+/*OVERLAY*/
+#overlay {
+     visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+}
+
+#overlay div {
+     width:300px;
+     margin: 100px auto;
+     background-color: #fff;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center;
+}
 
 /*ACCORDIAN*/
 .ui-widget {
