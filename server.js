@@ -35,17 +35,6 @@ app.use(methodOverride(function(req, res){
   }
 }));
 
-// Function to check login
-function isLoggedIn(req, res, next) {
-
-    // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
-        return next();
-
-    // if they aren't redirect them to the home page
-    res.redirect('/');
-}
-
 // LOCALS //
 app.use(function(req, res, next) {
 	res.locals.login = req.isAuthenticated();
@@ -79,6 +68,17 @@ app.get('/logout', function(req, res){
 	req.logout();
 	res.redirect('/')
 })
+
+// Function to check login
+function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on 
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
 
 // CONNECTIONS //
 mongoose.connect(mongoUri);

@@ -1,7 +1,7 @@
 {
   "name": "visualize_today",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://the-ritual-app.herokuapp.com/",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -29,5 +29,6 @@
     "morgan": "~1.0.0",
     "passport": "~0.1.17",
     "passport-local": "~0.1.6"
-  }
+  },
+  "devDependencies": {}
 }
